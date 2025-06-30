@@ -47,15 +47,3 @@ proyecto-estudiantes/
 
 👉 Podés ver una guía paso a paso del desarrollo del proyecto en Notion:  
 🔗 [Guía CRUD - Proyecto Estudiantes](https://www.notion.so/Proyecto-Estudiantes-CRUD-2224f8f6324a80beaf66d0a12f1e3cba?source=copy_link)
-
----
-
-## ⚙️ Cómo correr el proyecto localmente
-
-1. **Clonar el repositorio**
-
-```bash
-git clone https://github.com/AIVERKE/Crud-Estudiantes.git
-cd Crud-Estudiantes
-
-```
