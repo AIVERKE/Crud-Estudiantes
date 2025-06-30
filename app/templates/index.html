@@ -1,0 +1,45 @@
+{% extends "layout.html" %} {% block title %}Estudiantes registrados{% endblock
+%} {% block content %}
+
+<div class="card shadow-sm">
+  <div class="card-body">
+    <h4 class="card-title mb-4">Lista de Estudiantes</h4>
+
+    {% if estudiantes %}
+    <ul class="list-group">
+      {% for estudiante in estudiantes %}
+      <li
+        class="list-group-item d-flex justify-content-between align-items-center"
+      >
+        <div>
+          <h6 class="mb-1">{{ estudiante.nombre }}</h6>
+          <small class="text-muted"
+            >{{ estudiante.carrera or 'Sin carrera' }}{% if estudiante.edad %},
+            {{ estudiante.edad }} años{% endif %}</small
+          >
+        </div>
+        <div>
+          <a
+            href="{{ url_for('main.edit_student', id=estudiante.id) }}"
+            class="btn btn-sm btn-outline-primary me-2"
+            >Editar</a
+          >
+          <a
+            href="{{ url_for('main.delete_student', id=estudiante.id) }}"
+            class="btn btn-sm btn-outline-danger"
+            onclick="return confirm('¿Seguro que quieres eliminar este estudiante?');"
+            >Eliminar</a
+          >
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+    {% else %}
+    <div class="alert alert-warning text-center mb-0">
+      No hay estudiantes registrados aún.
+    </div>
+    {% endif %}
+  </div>
+</div>
+
+{% endblock %}
